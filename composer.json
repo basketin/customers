@@ -1,0 +1,16 @@
+{
+    "name": "basketin/customers",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Basketin\\Customers\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Karim Mohamed",
+            "email": "komicho1996@gmail.com"
+        }
+    ],
+    "require": {}
+}
