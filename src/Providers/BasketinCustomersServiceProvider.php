@@ -14,6 +14,20 @@ class BasketinCustomersServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        config([
+            'auth.guards.basketin' => array_merge([
+                'driver' => 'session',
+                'provider' => 'basketin',
+            ], config('auth.guards.basketin', [])),
+        ]);
+
+        config([
+            'auth.providers.basketin' => array_merge([
+                'driver' => 'eloquent',
+                'model' => \Basketin\Component\Customers\Models\Customer::class,
+            ], config('auth.providers.basketin', [])),
+        ]);
+
         $this->app->singleton('basketin.customers.customer', CustomerService::class);
     }
 

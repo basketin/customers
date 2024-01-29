@@ -3,6 +3,8 @@
 namespace Basketin\Component\Customers\Services;
 
 use Basketin\Component\Customers\Repositories\CustomerRepository;
+use Basketin\Component\Customers\Services\CustomerToken;
+use Illuminate\Support\Facades\Auth;
 
 class CustomerService
 {
@@ -18,5 +20,14 @@ class CustomerService
         }
 
         return $this->customerRepository->createNewCustomer(...$data);
+    }
+
+    public function login($email, $password, $remember = false)
+    {
+        if (Auth::guard('basketin')->attempt(['email' => $email, 'password' => $password], $remember)) {
+            return new CustomerToken(Auth::guard('basketin')->user());
+        }
+
+        return false;
     }
 }
