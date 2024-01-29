@@ -2,6 +2,7 @@
 
 namespace Basketin\Component\Customers\Providers;
 
+use Basketin\Component\Customers\Services\CustomerService;
 use Illuminate\Support\ServiceProvider;
 
 class BasketinCustomersServiceProvider extends ServiceProvider
@@ -13,7 +14,7 @@ class BasketinCustomersServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->singleton('basketin.customers.customer', CustomerService::class);
     }
 
     /**
