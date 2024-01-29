@@ -3,7 +3,7 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Basketin\\Customers\\": "src/"
+            "Basketin\\Component\\Customers\\": "src/"
         }
     },
     "authors": [
@@ -12,5 +12,15 @@
             "email": "komicho1996@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "php": "^8.1",
+        "laravel/framework": "^10.0"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Basketin\\Component\\Customers\\Providers\\BasketinCustomersServiceProvider"
+            ]
+        }
+    }
 }
