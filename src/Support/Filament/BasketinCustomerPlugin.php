@@ -2,6 +2,7 @@
 
 namespace Basketin\Component\Customers\Support\Filament;
 
+use Basketin\Component\Customers\Support\Filament\Resources\CustomerAddressResource;
 use Basketin\Component\Customers\Support\Filament\Resources\CustomerResource;
 use Filament\Contracts\Plugin;
 use Filament\Panel;
@@ -18,6 +19,7 @@ class BasketinCustomerPlugin implements Plugin
         $panel
             ->resources([
                 CustomerResource::class,
+                CustomerAddressResource::class,
             ]);
     }
 

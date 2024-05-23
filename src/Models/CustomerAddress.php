@@ -2,6 +2,7 @@
 
 namespace Basketin\Component\Customers\Models;
 
+use Basketin\Component\Customers\Models\Customer;
 use Illuminate\Database\Eloquent\Model;
 
 class CustomerAddress extends Model
@@ -22,4 +23,9 @@ class CustomerAddress extends Model
         'phone_number',
         'is_main',
     ];
+
+    public function customer()
+    {
+        return $this->hasOne(Customer::class, 'id', 'customer_id');
+    }
 }
