@@ -2,6 +2,7 @@
 
 namespace Basketin\Component\Customers\Models;
 
+use Basketin\Component\Customers\Models\CustomerAddress;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Laravel\Sanctum\HasApiTokens;
 
@@ -31,4 +32,9 @@ class Customer extends Authenticatable
         'password',
         'remember_token',
     ];
+
+    public function addresses()
+    {
+        return $this->hasMany(CustomerAddress::class, 'customer_id', 'id');
+    }
 }

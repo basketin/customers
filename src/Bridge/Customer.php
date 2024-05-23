@@ -31,4 +31,9 @@ class Customer
             'password' => Hash::make($password),
         ]);
     }
+
+    public function addresses()
+    {
+        return new Addresses($this->customer);
+    }
 }
