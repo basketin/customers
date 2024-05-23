@@ -33,6 +33,11 @@ class Customer extends Authenticatable
         'remember_token',
     ];
 
+    public function getFullNameAttribute()
+    {
+        return $this->first_name . ' ' . $this->last_name;
+    }
+
     public function addresses()
     {
         return $this->hasMany(CustomerAddress::class, 'customer_id', 'id');
