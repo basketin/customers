@@ -1,8 +1,8 @@
 <?php
 
-namespace Basketin\Component\Customers\Support\Filament\Resources\CustomerAddressResource\Pages;
+namespace Basketin\Filament\Customers\Resources\CustomerAddressResource\Pages;
 
-use Basketin\Component\Customers\Support\Filament\Resources\CustomerAddressResource;
+use Basketin\Filament\Customers\Resources\CustomerAddressResource;
 use Filament\Actions;
 use Filament\Resources\Pages\EditRecord;
 

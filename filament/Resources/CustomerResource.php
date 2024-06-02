@@ -1,11 +1,11 @@
 <?php
 
-namespace Basketin\Component\Customers\Support\Filament\Resources;
+namespace Basketin\Filament\Customers\Resources;
 
 use Basketin\Component\Customers\Models\Customer;
-use Basketin\Component\Customers\Support\Filament\Resources\CustomerResource\Pages\CreateCustomer;
-use Basketin\Component\Customers\Support\Filament\Resources\CustomerResource\Pages\EditCustomer;
-use Basketin\Component\Customers\Support\Filament\Resources\CustomerResource\Pages\ListCustomers;
+use Basketin\Filament\Customers\Resources\CustomerResource\Pages\CreateCustomer;
+use Basketin\Filament\Customers\Resources\CustomerResource\Pages\EditCustomer;
+use Basketin\Filament\Customers\Resources\CustomerResource\Pages\ListCustomers;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;

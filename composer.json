@@ -3,7 +3,8 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Basketin\\Component\\Customers\\": "src/"
+            "Basketin\\Component\\Customers\\": "src/",
+            "Basketin\\Filament\\Customers\\": "filament/"
         }
     },
     "authors": [

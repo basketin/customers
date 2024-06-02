@@ -1,8 +1,8 @@
 <?php
 
-namespace Basketin\Component\Customers\Support\Filament\Resources\CustomerResource\Pages;
+namespace Basketin\Filament\Customers\Resources\CustomerResource\Pages;
 
-use Basketin\Component\Customers\Support\Filament\Resources\CustomerResource;
+use Basketin\Filament\Customers\Resources\CustomerResource;
 use Filament\Actions;
 use Filament\Resources\Pages\EditRecord;
 use Illuminate\Support\Facades\Hash;

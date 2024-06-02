@@ -1,12 +1,12 @@
 <?php
 
-namespace Basketin\Component\Customers\Support\Filament\Resources;
+namespace Basketin\Filament\Customers\Resources;
 
 use Basketin\Component\Customers\Models\Customer;
 use Basketin\Component\Customers\Models\CustomerAddress;
-use Basketin\Component\Customers\Support\Filament\Resources\CustomerAddressResource\Pages\CreateCustomerAddress;
-use Basketin\Component\Customers\Support\Filament\Resources\CustomerAddressResource\Pages\EditCustomerAddress;
-use Basketin\Component\Customers\Support\Filament\Resources\CustomerAddressResource\Pages\ListCustomerAddresses;
+use Basketin\Filament\Customers\Resources\CustomerAddressResource\Pages\CreateCustomerAddress;
+use Basketin\Filament\Customers\Resources\CustomerAddressResource\Pages\EditCustomerAddress;
+use Basketin\Filament\Customers\Resources\CustomerAddressResource\Pages\ListCustomerAddresses;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;

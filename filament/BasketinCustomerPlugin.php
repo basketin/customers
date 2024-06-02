@@ -1,9 +1,9 @@
 <?php
 
-namespace Basketin\Component\Customers\Support\Filament;
+namespace Basketin\Filament\Customers;
 
-use Basketin\Component\Customers\Support\Filament\Resources\CustomerAddressResource;
-use Basketin\Component\Customers\Support\Filament\Resources\CustomerResource;
+use Basketin\Filament\Customers\Resources\CustomerAddressResource;
+use Basketin\Filament\Customers\Resources\CustomerResource;
 use Filament\Contracts\Plugin;
 use Filament\Panel;
 
