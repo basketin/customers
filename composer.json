@@ -7,6 +7,11 @@
             "Basketin\\Filament\\Customers\\": "filament/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Basketin\\Component\\Customers\\Tests\\": "tests/"
+        }
+    },
     "authors": [
         {
             "name": "Karim Mohamed",
@@ -17,11 +22,23 @@
         "laravel/framework": "^10.0||^11.0",
         "laravel/sanctum": "^3.3||^4.0"
     },
+    "require-dev": {
+        "orchestra/testbench": "^8.16",
+        "pestphp/pest-plugin-laravel": "*"
+    },
     "extra": {
         "laravel": {
             "providers": [
                 "Basketin\\Component\\Customers\\Providers\\BasketinCustomersServiceProvider"
             ]
         }
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "scripts": {
+        "test": "./vendor/bin/pest"
     }
 }

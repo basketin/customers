@@ -3,6 +3,8 @@
 namespace Basketin\Component\Customers\Services;
 
 use Basketin\Component\Customers\Contracts\CustomerModel;
+use Basketin\Component\Customers\Exceptions\AuthenticationDataIncorrectException;
+use Basketin\Component\Customers\Exceptions\CustomerAlreadyRegisteredException;
 use Basketin\Component\Customers\Services\CustomerProfileService;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -17,7 +19,7 @@ class CustomerService
     public function createNewCustomer(...$data)
     {
         if ($this->customerModel->where('email', $data['email'])->orWhere('phone', $data['phone'])->exists()) {
-            throw new \Exception('The customer is already registered');
+            throw new CustomerAlreadyRegisteredException('The customer is already registered');
         }
 
         $customer = $this->customerModel->create([
@@ -37,7 +39,7 @@ class CustomerService
             return $this->profile(Auth::guard('basketin')->user());
         }
 
-        throw new \Exception('The authentication data is incorrect');
+        throw new AuthenticationDataIncorrectException('The authentication data is incorrect');
     }
 
     public function profile(CustomerModel $customer)
