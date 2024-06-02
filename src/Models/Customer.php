@@ -2,11 +2,12 @@
 
 namespace Basketin\Component\Customers\Models;
 
+use Basketin\Component\Customers\Contracts\CustomerModel;
 use Basketin\Component\Customers\Models\CustomerAddress;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Laravel\Sanctum\HasApiTokens;
 
-class Customer extends Authenticatable
+class Customer extends Authenticatable implements CustomerModel
 {
     use HasApiTokens;
 

@@ -2,6 +2,8 @@
 
 namespace Basketin\Component\Customers\Providers;
 
+use Basketin\Component\Customers\Contracts\CustomerModel;
+use Basketin\Component\Customers\Models\Customer;
 use Basketin\Component\Customers\Services\CustomerService;
 use Illuminate\Support\ServiceProvider;
 
@@ -24,9 +26,11 @@ class BasketinCustomersServiceProvider extends ServiceProvider
         config([
             'auth.providers.basketin' => array_merge([
                 'driver' => 'eloquent',
-                'model' => \Basketin\Component\Customers\Models\Customer::class,
+                'model' => Customer::class,
             ], config('auth.providers.basketin', [])),
         ]);
+
+        $this->app->bind(CustomerModel::class, Customer::class);
 
         $this->app->singleton('basketin.customers.customer', CustomerService::class);
     }

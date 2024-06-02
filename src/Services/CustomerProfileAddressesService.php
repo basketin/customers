@@ -1,22 +1,24 @@
 <?php
 
-namespace Basketin\Component\Customers\Bridge;
+namespace Basketin\Component\Customers\Services;
 
-class Addresses
+use Basketin\Component\Customers\Contracts\CustomerModel;
+
+class CustomerProfileAddressesService
 {
     public function __construct(
-        private $customer
+        private CustomerModel $customerModel,
     ) {
     }
 
     public function all()
     {
-        return $this->customer->addresses()->get();
+        return $this->customerModel->addresses;
     }
 
     public function create($label, $countryCode, $cityId, $postcode, $streetLine1, $phoneNumber, $streetLine2 = null, $isMain = null)
     {
-        return $this->customer->addresses()->create([
+        return $this->customerModel->addresses()->create([
             'label' => $label,
             'country_code' => $countryCode,
             'city_id' => $cityId,
