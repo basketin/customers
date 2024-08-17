@@ -39,7 +39,7 @@ it('checks if the customer exists in creating a new', function () {
 })->throws(CustomerAlreadyRegisteredException::class);
 
 
-it('login', function () {
+it('login by email', function () {
     Customer::createNewCustomer(
         first_name: 'Karim',
         last_name: 'Mohamed',
@@ -56,6 +56,22 @@ it('login', function () {
     ]);
 });
 
+it('login by phone', function () {
+    Customer::createNewCustomer(
+        first_name: 'Karim',
+        last_name: 'Mohamed',
+        email: 'karim@mail.com',
+        phone: '01234567899',
+        password: 'password',
+    );
+
+    $customer = Customer::loginByPhone('01234567899', 'password');
+
+    expect($customer->getModel())->toMatchArray([
+        'first_name' => 'Karim',
+        'last_name' => 'Mohamed'
+    ]);
+});
 
 it('login with incorrect data', function () {
     Customer::createNewCustomer(

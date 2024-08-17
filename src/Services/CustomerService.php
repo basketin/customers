@@ -13,8 +13,7 @@ class CustomerService
 {
     public function __construct(
         private CustomerModel $customerModel
-    ) {
-    }
+    ) {}
 
     public function createNewCustomer(...$data)
     {
@@ -36,6 +35,15 @@ class CustomerService
     public function login($email, $password, $remember = false)
     {
         if (Auth::guard('basketin')->attempt(['email' => $email, 'password' => $password], $remember)) {
+            return $this->profile(Auth::guard('basketin')->user());
+        }
+
+        throw new AuthenticationDataIncorrectException('The authentication data is incorrect');
+    }
+
+    public function loginByPhone($phone, $password, $remember = false)
+    {
+        if (Auth::guard('basketin')->attempt(['phone' => $phone, 'password' => $password], $remember)) {
             return $this->profile(Auth::guard('basketin')->user());
         }
 
